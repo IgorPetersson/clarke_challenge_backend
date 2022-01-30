@@ -86,6 +86,7 @@ def login():
     except UserNotFound as e:
         return {"msg": str(e)}, HTTPStatus.NOT_FOUND
 
+#coment
 @jwt_required()
 def get_user():
     user = get_jwt_identity()

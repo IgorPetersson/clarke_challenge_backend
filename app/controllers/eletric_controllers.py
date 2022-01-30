@@ -4,7 +4,7 @@ from flask_jwt_extended import jwt_required
 
 @jwt_required()
 def get_provider_for_kwh(kwh):
-    providers_electric = Electric.query.filter(Electric.mininum_limit_kwh < kwh).all()
+    providers_electric = Electric.query.filter(Electric.mininum_limit_kwh <= kwh).all()
     providers = [{
         "id": provider.id,
         "name": provider.name,
